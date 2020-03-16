@@ -1,0 +1,320 @@
+@font-face {
+    font-family: 'Questrial';
+    src: url('./fonts/Questrial/Questrial-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@import '~antd/dist/antd.css';
+
+@colorPrimary: #ffffff;
+@colorSecundary: #bab9c8;
+@colorPurpleWh: #dba4ff;
+@colorPurpleWhLigth: #e1c3f5;
+@colorPrimaryLigth: #ffcc5e;
+@colorDanger: #3ab415;
+@colorDangerLigth: #56d42f;
+//------------------------------------------ant-----------------------
+//--steps
+.ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon{
+  color: @colorPrimary;
+}
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title{
+  color: @colorPrimary;
+  font-weight: bold;
+}
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-description{
+  color: @colorSecundary;
+}
+.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after{
+  background-color: @colorSecundary;
+}
+//--tabs
+.ant-tabs{
+  color: @colorPrimary;
+}
+.ant-tabs-nav .ant-tabs-tab-active{
+  color: @colorPurpleWh;
+  font-size: 18px;
+}
+.ant-tabs-nav .ant-tabs-tab:hover{
+  color: @colorPurpleWhLigth;
+}
+.ant-tabs-ink-bar{
+  background-color: @colorPurpleWh;
+}
+.ant-table{
+  background-color: @colorPrimary;
+}
+.ant-table-thead{
+  background-color: @colorPurpleWh;
+}
+.ant-card-head-title{
+  white-space: normal;
+}
+//-----------------------------------------theme------------------------
+body {
+  
+background: rgba(33,33,33,1);
+background: -moz-linear-gradient(left, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(33,33,33,1)), color-stop(12%, rgba(33,33,33,1)), color-stop(25%, rgba(33,33,33,1)), color-stop(39%, rgba(41,41,41,1)), color-stop(50%, rgba(46,46,46,1)), color-stop(51%, rgba(46,46,46,1)), color-stop(60%, rgba(41,41,41,1)), color-stop(76%, rgba(33,33,33,1)), color-stop(91%, rgba(33,33,33,1)), color-stop(100%, rgba(33,33,33,1)));
+background: -webkit-linear-gradient(left, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
+background: -o-linear-gradient(left, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
+background: -ms-linear-gradient(left, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
+background: linear-gradient(to right, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#212121', GradientType=1 );
+
+  font-family: 'Questrial';
+  margin: 0px;
+  padding: 0px;
+}
+p{
+  color: @colorSecundary;
+  font-size: 22px;
+  text-align: center;
+  span{
+    color: #ffffff;
+    font-size: 26px;
+  }
+}
+
+//----------------------------------------------Nav-----------------------------------------------
+.nav-div{
+  display: block;
+  width: 100%;
+  margin-bottom: 35px;
+}
+.to-home{
+  display: inline-block;
+  margin: 10px 0px 10px 12% ;
+  text-align: center;
+  width: 120px;
+  color: #ffffff;
+  font-size: 30px;
+  span{
+    font-size: 14px;
+  }
+}
+.nav-buttons{
+  display: inline-block;
+  margin: 10px 0px 10px 18% ;
+}
+.nav-btn{
+  width: 134px;
+  background-color: #807f9a;
+  margin-right: 2px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  color: #ffffff;
+  font-size: 16px;
+  &:hover{
+    background-color: #a2a1b6;
+  }
+}
+.nav-border{
+  outline: #ffffff solid 1px;
+}
+//----------------------------------------------Footer-----------------------------------------------
+.footer-cont{
+  width: 100%;
+  background-color: #474747;
+  color: #ffffff;
+  margin-top: 70px;
+  display: block;
+}
+.footer-title{
+  text-align: center;
+  display: block;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+.footer-logo{
+  display: block;
+  margin: 10px 0px 10px 0px ;
+  text-align: center;
+  color: #ffffff;
+  font-size: 30px;
+  span{
+    font-size: 14px;
+  }
+}
+.footer-rigths{
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+.row-contacts{
+  width: 88%;
+  display: block;
+  margin: 25px auto 35px auto;
+}
+.contact{
+  font-size: 28px;
+  color: #1890ff;
+  span{
+    font-size: 18px;
+    margin-left: 10px;
+    color: #ffffff;
+  }
+}
+//----------------------------------Home------------------------------
+/* carrusel */
+.car-cont{
+  width: 238px;
+}
+.ant-carousel .slick-slide {
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+.border-round{
+  border: #ffffff solid 1px;
+  border-radius: 50%;
+  width: 270px;
+  height: 254px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+//-----------------------------home-text-----------------------------
+.h-title{
+  color: #ffffff;
+  text-align: center;
+  font-size: 88px;
+  span{
+    font-size: 22px;
+  }
+}
+.home-container{
+  width: 80%;
+  margin: 45px 10% 0px 10%
+}
+.white-p{
+  color: #ffffff;
+  width: 72%;
+  margin-left: auto;
+  margin-right: auto;
+  span{
+    font-size: 26px;
+    color: #e3e3e9;
+    text-shadow: 1.5px 1.5px #4c4778;
+  }
+}
+.steps-title{
+  font-size: 38px;
+  text-align: center;
+  margin-top: 35px;
+  color: @colorPrimary;
+  span{
+    color: #474747;
+  }
+}
+.big-button{
+  color: @colorPrimary;
+  font-size: 18px;
+  width: 270px;
+  background-color: #807f9a;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 35px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  outline: #ffffff solid 1px;
+  &:hover{
+    background-color: #a2a1b6;
+    span{
+      color: @colorDangerLigth;
+    }
+  }
+  span{
+    margin-left: 10px;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  
+}
+//----------------------------------------Seccion Contact-----------------------------
+.contact-car{
+  width: 362px;
+  height: 202px;
+  margin: 60px auto 60px auto;
+}
+.contact-text{
+  color: #ffffff;
+  width: 80%;
+  margin: 45px auto 20px auto;
+  div{
+    font-size: 38px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+.why{
+  width: 90%;
+  margin: 0px auto 20px auto;
+  li{
+    color: #ffffff;
+    margin: 0px auto 0px auto;
+    font-size: 18px;
+  }
+  div{
+    font-size: 38px;
+    color: #ffffff;
+    text-align: center;
+  }
+}
+//---------------------------------------------Seccion Productos--------------------------
+.product-cont{
+  width: 88%;
+  margin: 20px 6% 40px 6%;
+  display: block;
+}
+.product-title{
+  color: #4c037c;
+  font-size: 18px;
+  display: block;
+  width: 100%;
+  height: 48px;
+  text-align: center;
+}
+.precio{
+  font-size: 21px;
+  color: #1890ff;
+}
+.meses{
+  font-size: 17px;
+}
+//-------------------------------------------Admin-------------------------------------
+//----login------
+.login-cont{
+  display: flex;
+  width: 100%;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+//------productos-----
+.master-prod-cont{
+  width: 88%;
+  margin: 20px 6% 40px 6%;
+  display: block;
+}
+.new-prod{
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
