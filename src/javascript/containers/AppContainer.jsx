@@ -9,11 +9,13 @@ import Contact from 'Comp/Contact';
 import NavBar from 'Comp/NavBar';
 import Footer from 'Comp/Footer';
 import ImageExample from 'Comp/ImageExample';
+import Producto from 'Cont/Producto';
 
 const AppContainer = () => {
   return (
     <BrowserRouter>
       <NavBar />
+      <Route exact path="/producto" component={Producto} />
       <Route exact path="/" component={Home} />
       <Route exact path="/shelly-store-PROTO" component={Home} />
       <Route exact path="/productos" component={Productos} />

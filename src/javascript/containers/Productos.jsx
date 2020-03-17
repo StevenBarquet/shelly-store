@@ -6,6 +6,7 @@ import { Tabs, Icon } from 'antd';
 // Components
 import MapProduct from 'Comp/Productos/MapProduct';
 import LoadProducts from 'Comp/Productos/LoadProducts';
+import MockProducts from 'Comp/Productos/MockProducts';
 
 // Functions
 import { getAllProducts } from 'Others/peticiones';
@@ -54,7 +55,7 @@ const Productos = () => {
           {currentList && currentList.length > 0 && (
             <MapProduct currentList={currentList} />
           )}
-          {!currentList || (currentList.length === 0 && <LoadProducts />)}
+          {!currentList || (currentList.length === 0 && <MockProducts />)}
         </TabPane>
       </Tabs>
     </div>

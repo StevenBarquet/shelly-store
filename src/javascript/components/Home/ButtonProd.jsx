@@ -4,14 +4,20 @@ import React from 'react';
 import { Icon } from 'antd';
 import { Link } from 'react-router-dom';
 
+// CommonComps
+import ButtonMlg from 'CommonComps/ButtonMlg';
+
 const ButtonProd = () => {
   return (
     <Link to="/productos">
-      <div className="big-button">
-        Ver catálogo ahora
-        <span>
-          <Icon type="shopping" />
-        </span>
+      <div className="center-block">
+        <ButtonMlg
+          label="Ver catálogo ahora"
+          variant="purple"
+          size="default"
+          widthB="220px"
+          icon={<Icon type="shopping" />}
+        />
       </div>
     </Link>
   );

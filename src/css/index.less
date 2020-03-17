@@ -1,82 +1,14 @@
-@font-face {
-    font-family: 'Questrial';
-    src: url('./fonts/Questrial/Questrial-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
-  }
+@import './ant.less';
+@import './tema.less';
+@import './components.less';
 
-@import '~antd/dist/antd.css';
-
-@colorPrimary: #ffffff;
+@colorPrimary: #c221af;
 @colorSecundary: #bab9c8;
 @colorPurpleWh: #dba4ff;
 @colorPurpleWhLigth: #e1c3f5;
 @colorPrimaryLigth: #ffcc5e;
 @colorDanger: #3ab415;
 @colorDangerLigth: #56d42f;
-//------------------------------------------ant-----------------------
-//--steps
-.ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon{
-  color: @colorPrimary;
-}
-.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title{
-  color: @colorPrimary;
-  font-weight: bold;
-}
-.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-description{
-  color: @colorSecundary;
-}
-.ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after{
-  background-color: @colorSecundary;
-}
-//--tabs
-.ant-tabs{
-  color: @colorPrimary;
-}
-.ant-tabs-nav .ant-tabs-tab-active{
-  color: @colorPurpleWh;
-  font-size: 18px;
-}
-.ant-tabs-nav .ant-tabs-tab:hover{
-  color: @colorPurpleWhLigth;
-}
-.ant-tabs-ink-bar{
-  background-color: @colorPurpleWh;
-}
-.ant-table{
-  background-color: @colorPrimary;
-}
-.ant-table-thead{
-  background-color: @colorPurpleWh;
-}
-.ant-card-head-title{
-  white-space: normal;
-}
-//-----------------------------------------theme------------------------
-body {
-  
-background: rgba(33,33,33,1);
-background: -moz-linear-gradient(left, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(33,33,33,1)), color-stop(12%, rgba(33,33,33,1)), color-stop(25%, rgba(33,33,33,1)), color-stop(39%, rgba(41,41,41,1)), color-stop(50%, rgba(46,46,46,1)), color-stop(51%, rgba(46,46,46,1)), color-stop(60%, rgba(41,41,41,1)), color-stop(76%, rgba(33,33,33,1)), color-stop(91%, rgba(33,33,33,1)), color-stop(100%, rgba(33,33,33,1)));
-background: -webkit-linear-gradient(left, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
-background: -o-linear-gradient(left, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
-background: -ms-linear-gradient(left, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
-background: linear-gradient(to right, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 12%, rgba(33,33,33,1) 25%, rgba(41,41,41,1) 39%, rgba(46,46,46,1) 50%, rgba(46,46,46,1) 51%, rgba(41,41,41,1) 60%, rgba(33,33,33,1) 76%, rgba(33,33,33,1) 91%, rgba(33,33,33,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#212121', GradientType=1 );
-
-  font-family: 'Questrial';
-  margin: 0px;
-  padding: 0px;
-}
-p{
-  color: @colorSecundary;
-  font-size: 22px;
-  text-align: center;
-  span{
-    color: #ffffff;
-    font-size: 26px;
-  }
-}
 
 //----------------------------------------------Nav-----------------------------------------------
 .nav-div{
@@ -160,15 +92,10 @@ p{
     color: #ffffff;
   }
 }
-//----------------------------------Home------------------------------
+//-----------------------------------------------Home---------------------------------------
 /* carrusel */
 .car-cont{
   width: 238px;
-}
-.ant-carousel .slick-slide {
-  text-align: center;
-  overflow: hidden;
-  width: 100%;
 }
 .border-round{
   border: #ffffff solid 1px;
@@ -181,7 +108,7 @@ p{
   align-items: center;
   justify-content: center;
 }
-//-----------------------------home-text-----------------------------
+//----home-text------
 .h-title{
   color: #ffffff;
   text-align: center;
@@ -241,56 +168,152 @@ p{
   }
   
 }
-//----------------------------------------Seccion Contact-----------------------------
-.contact-car{
-  width: 362px;
-  height: 202px;
-  margin: 60px auto 60px auto;
+//------------------------------------------Productos--------------------------------
+.search-item-container{
+  background-color: #ffffff;
+  border-radius: 3px;
+  margin: 25px 0px 0px 0px;
+  font-size: 16px;
+  width: 310px;
 }
-.contact-text{
+.search-item-header{
+  font-size: 18px;
+  padding: 8px 8px 8px 8px;
+  margin: 8px;
+  color: @color_darkSemiLigth;
+  border-bottom: 1px solid #c221af;
+  span{
+    font-weight: bold;
+  }
+  /* Required for text-overflow to do anything */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.search-item-img-container{
+  margin: 4px auto 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 300px;
+  height: 300px;
+}
+.search-item-belt{
   color: #ffffff;
-  width: 80%;
-  margin: 45px auto 20px auto;
-  div{
-    font-size: 38px;
-    color: #ffffff;
-    text-align: center;
+  background-color:  rgba(17, 17, 17, 0.8);
+  position: relative;
+  top: -55px;
+  border-radius: 3px;
+  margin: 0px 5px 0px 5px;
+}
+.search-item-special{
+  color: rgb(184, 49, 161);
+  font-weight: bold;
+  text-align: left;
+  font-size: 18px;
+  margin: 10px;
+}
+.search-item-price{
+  color: @color_darkSemiLigth;
+  text-align: right;
+  margin: 10px;
+  font-size: 19px;
+}
+.search-item-left{
+  color: rgb(184, 49, 161);
+  font-size: 19px;
+  position: relative;
+  top: -20px;
+  span{
+    color: rgb(48, 44, 44);
   }
 }
-.why{
+//-------------------------------------------Item-----------------------------------------
+.product-container{
   width: 90%;
-  margin: 0px auto 20px auto;
-  li{
+  margin: 15px 5% 25px 5%;
+  padding: 20px;
+  h4{
+    font-size: 25px;
+    color: @color_lightText;    
+    display: block;
+    padding: 10px;
+    span{
+      font-weight: bold;
+    }
+  } 
+}
+.cover-cont{
+  border: 1px solid @color_darkLigth;  
+  margin: 4px auto 4px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  &-small{
+    width: 80px;
+    height: 80px;
+  }
+  &-big{
+    width: 380px;
+    height: 380px;
+  }
+}
+.prod-details{
+  p{
+    color: @color_lightText;
+    font-size: 17px;
+    text-align: left;
+    margin-top: 15px;
+  }
+  h6{
+    color: @color_darkUltraLigth;
+    font-size: 15px;
+    span{
+      color: @color_primary;
+      font-size: 17px;
+      padding-left: 5px;
+    }
+  }
+  h5{
+    color: @color_darkUltraLigth;
+    font-size: 15px;
+    span{
+      color: #c221af;
+      font-size: 17px;
+      padding-left: 5px;
+    }
+  }
+}
+.precio-product{
+  color: @color_lightText;
+  font-size: 28px;
+  padding: 12px 0px 0px 0px;
+}
+.prod-specs{
+  h6{
+    margin-top: 20px;
+    color: @color_primary;
+    font-size: 21px;
+    i{
+      color: #ffffff;
+    }
+  }
+  p{
+    text-align: left;
     color: #ffffff;
-    margin: 0px auto 0px auto;
     font-size: 18px;
   }
-  div{
-    font-size: 38px;
+}
+.specs-card{
+  background: none;
+  margin: 35px;
+  color: #ffffff;
+  padding-left: 30px;
+  p{
     color: #ffffff;
-    text-align: center;
   }
-}
-//---------------------------------------------Seccion Productos--------------------------
-.product-cont{
-  width: 88%;
-  margin: 20px 6% 40px 6%;
-  display: block;
-}
-.product-title{
-  color: #4c037c;
-  font-size: 18px;
-  display: block;
-  width: 100%;
-  height: 48px;
-  text-align: center;
-}
-.precio{
-  font-size: 21px;
-  color: #1890ff;
-}
-.meses{
-  font-size: 17px;
 }
 //-------------------------------------------Admin-------------------------------------
 //----login------
