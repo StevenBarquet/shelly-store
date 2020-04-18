@@ -1,39 +1,50 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 
 // Other
 import { Button, Table } from 'antd';
 
 const MasterListProduct = props => {
-  const { onUpdateAll, currentList, onDeleteP } = props;
+  const {
+    onUpdateAll,
+    currentList,
+    onDeleteP,
+    onOpenEditProduct,
+    onShowForm
+  } = props;
   const dataSource = currentList;
 
   useEffect(() => {
     onUpdateAll();
-  });
+  }, []);
 
   const clickTest = e => {
     console.log('delete test: ', e.target.value);
     onDeleteP(e.target.value);
   };
+  const editOpen = e => {
+    onOpenEditProduct(e.target.value);
+    onShowForm();
+  };
 
   const columns = [
     {
       title: 'Nombre',
-      dataIndex: 'nombre',
-      key: 'nombre'
+      dataIndex: 'modelo',
+      key: 'modelo'
     },
     {
-      title: 'Precio',
+      title: 'Costo',
       dataIndex: 'costo',
       key: 'costo'
     },
     {
-      title: 'Cantidad',
-      dataIndex: 'cantidad',
-      key: 'cantidad'
+      title: 'Disponibles',
+      dataIndex: 'disponibles',
+      key: 'disponibles'
     },
     {
-      title: 'Action',
+      title: 'Delete',
       dataIndex: 'id',
       key: 'id',
       render: id => (
@@ -43,12 +54,22 @@ const MasterListProduct = props => {
       )
     },
     {
+      title: 'Edit',
+      dataIndex: 'id',
+      key: 'id',
+      render: id => (
+        <Button onClick={editOpen} value={id} type="primary">
+          Editar
+        </Button>
+      )
+    },
+    {
       title: 'Portada',
-      dataIndex: 'url1',
-      key: 'url1',
-      render: url1 => (
+      dataIndex: 'images',
+      key: 'images',
+      render: images => (
         <span>
-          <img src={url1} alt="vmo" width="40px" />
+          <img src={images.cover} alt="vmo" width="40px" />
         </span>
       )
     }

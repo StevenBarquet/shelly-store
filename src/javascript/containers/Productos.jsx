@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 
 // Other
@@ -6,25 +7,23 @@ import { Tabs, Icon } from 'antd';
 // Components
 import MapProduct from 'Comp/Productos/MapProduct';
 import LoadProducts from 'Comp/Productos/LoadProducts';
-import MockProducts from 'Comp/Productos/MockProducts';
 
 // Functions
-import { getAllProducts } from 'Others/peticiones';
-import servicesData from 'Others/servicesData.json';
+import { getAllProducts, urlProduct } from 'Others/peticiones';
 
 const { TabPane } = Tabs;
 
 const Productos = () => {
   const [currentList, setCurrentList] = useState([]);
   const onClientGetAll = () => {
-    getAllProducts(servicesData.url).then(data => {
+    getAllProducts(urlProduct).then(data => {
       setCurrentList(data);
     });
   };
 
   useEffect(() => {
     onClientGetAll();
-  });
+  }, []);
 
   const callback = key => {
     console.log(key);
@@ -32,17 +31,6 @@ const Productos = () => {
   return (
     <div className="product-cont">
       <Tabs defaultActiveKey="2" onChange={callback}>
-        {/* <TabPane
-          tab={
-            <span>
-              <Icon type="apple" />
-              Apple
-            </span>
-          }
-          key="1"
-        >
-          <LoadProducts />
-        </TabPane> */}
         <TabPane
           tab={
             <span>
@@ -55,7 +43,7 @@ const Productos = () => {
           {currentList && currentList.length > 0 && (
             <MapProduct currentList={currentList} />
           )}
-          {!currentList || (currentList.length === 0 && <MockProducts />)}
+          {!currentList || (currentList.length === 0 && <LoadProducts />)}
         </TabPane>
       </Tabs>
     </div>

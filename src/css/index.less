@@ -61,7 +61,7 @@
   text-align: center;
   display: block;
   font-size: 30px;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 .footer-logo{
   display: block;
@@ -84,6 +84,7 @@
   margin: 25px auto 35px auto;
 }
 .contact{
+  text-align: center;
   font-size: 28px;
   color: #1890ff;
   span{
@@ -304,6 +305,7 @@
     text-align: left;
     color: #ffffff;
     font-size: 18px;
+    white-space: pre-line
   }
 }
 .specs-card{
@@ -315,6 +317,71 @@
     color: #ffffff;
   }
 }
+//------------------------------------------Pedido---------------------------------
+.buy-item-container{
+  background-color: @color_lightText;
+  border-radius: 3px;
+  margin: 25px 25px 0px 25px;
+  font-size: 16px;
+}
+.buy-item-header{
+  font-size: 18px;
+  margin: 8px;
+  border-bottom: 1px solid @color_primary;
+}
+.cart-images-big{
+  margin: 4px auto 4px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 100px;
+  height: 100px;
+}
+.cart-total-container{
+  border-top: 1px solid #ffffff;
+  margin: 25px 27px 0px 27px;
+  padding: 10px;
+  color: @color_primary;
+  font-size: 26px;
+  p{
+    font-size: 22px;
+    color: @color_lightText;
+  }
+}
+.pedido-selction{
+  color: #ffffff;
+  font-size: 22px;
+  hr{
+    color: #ffffff;
+  }
+  p{
+    margin: 25px 0px 25px 0px;
+    color: #ffffff;
+    span{
+      color: #fab624;
+    }
+    h6{
+      font-size: 25px;
+      color: #ffcc5e;
+    }
+    a{
+      i{
+        color: #1890ff;
+        margin-right: 8px;
+      }
+      span{
+        color: #ffffff;
+      }
+    }
+  }
+}
+.pedido-form{
+  width: 90%;
+  margin: 35px auto 35px auto;
+}
+
+
 //-------------------------------------------Admin-------------------------------------
 //----login------
 .login-cont{

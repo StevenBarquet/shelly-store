@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Row } from 'antd';
 
-// Other
-import { Row, Col, Card, Button } from 'antd';
+// Components
+import MockProducts from 'Comp/Productos/MockProducts';
 
 const MapProduct = props => {
   const { currentList } = props;
@@ -10,28 +12,29 @@ const MapProduct = props => {
       {currentList &&
         currentList.length > 0 &&
         currentList.map(element => {
+          const {
+            id,
+            marca,
+            modelo,
+            type,
+            precio,
+            images,
+            shortMicro,
+            disponibles
+          } = element;
           return (
-            <Col key={element.id} align="middle" xl={8}>
-              <Card
-                cover={
-                  <img src={element.url1} alt={element.nombre} width="320px" />
-                }
-                hoverable
-                title={<div className="product-title">{element.nombre}</div>}
-                style={{ width: 360 }}
-              >
-                <Card.Meta
-                  title={<span className="precio">${element.costo}</span>}
-                  description={
-                    <span className="meses">
-                      o en 12 mensuaidades de $
-                      {((element.costo * 1.1) / 12).toFixed(2)}
-                    </span>
-                  }
-                />
-                <Button style={{ marginTop: '10px' }}>Comprar ahora</Button>
-              </Card>
-            </Col>
+            <Link to={'/producto=' + id}>
+              <MockProducts
+                id={id}
+                marca={marca}
+                modelo={modelo}
+                type={type}
+                precio={precio}
+                cover={images.cover}
+                shortMicro={shortMicro}
+                disponibles={disponibles}
+              />
+            </Link>
           );
         })}
     </Row>

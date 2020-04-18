@@ -22,6 +22,8 @@ const MasterProducts = props => {
     onNewProduct,
     onUpdateAll,
     currentList,
+    formMaster,
+    onOpenEditProduct,
     onDeleteP
   } = props;
   return (
@@ -35,6 +37,7 @@ const MasterProducts = props => {
         newP={newP}
         onShowForm={onShowForm}
         onUpdateAll={onUpdateAll}
+        formMaster={formMaster}
       />
       <Tabs defaultActiveKey="1" onChange={callback}>
         <TabPane
@@ -50,6 +53,8 @@ const MasterProducts = props => {
             onUpdateAll={onUpdateAll}
             currentList={currentList}
             onDeleteP={onDeleteP}
+            onOpenEditProduct={onOpenEditProduct}
+            onShowForm={onShowForm}
           />
         </TabPane>
         <TabPane

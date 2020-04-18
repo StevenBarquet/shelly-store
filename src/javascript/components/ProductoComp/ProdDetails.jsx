@@ -8,7 +8,7 @@ import ButtonMlg from 'CommonComps/ButtonMlg';
 import { priceFormat } from 'Others/otherMethods';
 
 const ProdDetails = props => {
-  const { data } = props;
+  const { data, comprar, setProductCache } = props;
   const {
     detalles,
     type,
@@ -22,6 +22,7 @@ const ProdDetails = props => {
     <Row gutter={[0, 6]} className="prod-details">
       <Col sm={24}>
         <ButtonMlg
+          onClick={comprar}
           label="Comprar ahora"
           variant="blue"
           size="big"
@@ -34,6 +35,7 @@ const ProdDetails = props => {
           label="Agregar al carrito"
           variant="yellow"
           size="big"
+          onClick={() => setProductCache(true)}
           icon={<Icon type="shopping-cart" />}
           widthB="280px"
         />
@@ -63,7 +65,7 @@ const ProdDetails = props => {
       </Col>
       <Col sm={24}>
         <h6>
-          Detalle o problema: <span>{detalles}</span>
+          Defecto o problema: <span>{detalles}</span>
         </h6>
       </Col>
       <Col sm={24}>

@@ -16,6 +16,8 @@ const ButtonMlg = props => {
     switch (variant) {
       case 'yellow':
         return 'btn-mlg-yellow';
+      case 'block':
+        return 'btn-mlg-block';
       case 'blue':
         return 'btn-mlg-blue';
       case 'purple':
@@ -60,7 +62,7 @@ const ButtonMlg = props => {
         type="submit"
         style={checkWidth()}
         value={value}
-        onClick={onClick}
+        onClick={variant === 'block' ? null : onClick}
         className={estilo || 'btn-mlg ' + checkVariant() + ' ' + checkSize()}
       >
         {icon}
@@ -73,7 +75,7 @@ const ButtonMlg = props => {
       type="button"
       style={checkWidth()}
       value={value}
-      onClick={onClick}
+      onClick={variant === 'block' ? null : onClick}
       className={estilo || 'btn-mlg ' + checkVariant() + ' ' + checkSize()}
     >
       {icon}

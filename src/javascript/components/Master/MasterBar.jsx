@@ -10,7 +10,7 @@ const MasterBar = props => {
   return (
     <div className="nav-div">
       <div className="to-home">
-        VMO <span>master</span>
+        Shelly <span>Store</span>
       </div>
       <div className="nav-buttons">
         <div

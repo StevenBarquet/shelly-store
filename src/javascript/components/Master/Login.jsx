@@ -14,9 +14,8 @@ const Login = Form.create({})(props => {
     form.validateFieldsAndScroll((err, value) => {
       if (!err) {
         if (
-          (value.usuario === 'VMOmovil1112@gmail.com' ||
-            value.usuario === 'vmomovil1112@gmail.com') &&
-          value.pass === 'gokussjf4'
+          (value.usuario === 'howard' || value.usuario === 'botz') &&
+          value.pass === 'comic456'
         ) {
           setDisable(false);
           onLogin();

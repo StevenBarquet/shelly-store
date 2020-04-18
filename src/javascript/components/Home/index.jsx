@@ -14,7 +14,7 @@ const Home = () => {
       </div>
       <p>
         Los mejores equipos de cómputo de <span>tiempo limitado</span> al mejor
-        precio <Link to="/productos">aquí</Link>
+        precio <Link to="/master">aquí</Link>
       </p>
       <RoundCarousel />
       <div className="home-container">

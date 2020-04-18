@@ -137,8 +137,8 @@ module.exports = {
         ]
       }
     ],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/rules-of-hooks": "error",    
+    "react-hooks/exhaustive-deps": 0
   },
   "plugins": [
     "html",

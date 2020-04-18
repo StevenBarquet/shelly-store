@@ -7,11 +7,14 @@ import MasterProducts from 'Comp/Master/MasterProducts';
 
 // Functions
 import {
+  urlProduct,
   insertProduct,
   getAllProducts,
+  getProduct,
   deleteProduct
 } from 'Others/peticiones';
-import servicesData from 'Others/servicesData.json';
+
+// import servicesData from 'Others/servicesData.json';
 
 const Master = () => {
   const [currentWindow, setCurrentWindow] = useState('products');
@@ -19,8 +22,86 @@ const Master = () => {
   const [auth, setAuth] = useState(localStorage.getItem('auth'));
   const [form, setForm] = useState({});
 
+  const reMapForm = obj => {
+    // covierte el form de {url1: '', url2: '', ...} a {images: cover: '', extra: []}
+    let newImages;
+    const fieldName = Object.keys(obj)[0];
+    const value = Object.values(obj)[0];
+
+    switch (fieldName) {
+      case 'url1':
+        if (form.images) {
+          newImages = { images: { ...form.images, cover: value } };
+        } else {
+          newImages = {
+            images: {
+              cover: value
+            }
+          };
+        }
+        break;
+      case 'url2':
+        if (form.images) {
+          const newExtra = [
+            value,
+            form.images.extra[1] || '',
+            form.images.extra[2] || ''
+          ];
+          newImages = { images: { ...form.images, extra: newExtra } };
+        } else {
+          newImages = {
+            images: {
+              extra: [value, '', '']
+            }
+          };
+        }
+        break;
+      case 'url3':
+        if (form.images) {
+          const newExtra = [
+            form.images.extra[0] || '',
+            value,
+            form.images.extra[2] || ''
+          ];
+          newImages = { images: { ...form.images, extra: newExtra } };
+        } else {
+          newImages = {
+            images: {
+              extra: ['', value, '']
+            }
+          };
+        }
+        break;
+      case 'url4':
+        if (form.images) {
+          const newExtra = [
+            form.images.extra[0] || '',
+            form.images.extra[1] || '',
+            value
+          ];
+          newImages = { images: { ...form.images, extra: newExtra } };
+        } else {
+          newImages = {
+            images: {
+              extra: ['', '', value]
+            }
+          };
+        }
+        break;
+      default:
+        newImages = obj;
+        break;
+    }
+    console.log('Interceptando form', newImages);
+    return newImages;
+  };
+
   const updateForm = keyValue => {
-    setForm({ ...form, ...keyValue });
+    if (keyValue === 'clear') {
+      setForm({});
+    } else {
+      setForm({ ...form, ...reMapForm(keyValue) });
+    }
   };
 
   const onLogin = () => {
@@ -35,12 +116,22 @@ const Master = () => {
     setCurrentWindow(cad);
   };
 
+  // const cleanForm = () => {
+  //   setForm({});
+  // };
+
+  const onOpenEditProduct = id => {
+    getProduct(urlProduct, id).then(data => {
+      setForm(data);
+    });
+  };
+
   const onNewProduct = () => {
-    return insertProduct(servicesData.url, form);
+    return insertProduct(urlProduct, form);
   };
 
   const onUpdateAll = () => {
-    getAllProducts(servicesData.url).then(data => {
+    getAllProducts(urlProduct).then(data => {
       setCurrentList(
         data.map(element => {
           return {
@@ -53,7 +144,7 @@ const Master = () => {
   };
 
   const onDeleteP = idButton => {
-    deleteProduct(servicesData.url, { id: idButton }).then(() => {
+    deleteProduct(urlProduct, { id: idButton }).then(() => {
       onUpdateAll();
     });
   };
@@ -75,8 +166,10 @@ const Master = () => {
       <MasterProducts
         onNewProduct={onNewProduct}
         updateForm={updateForm}
+        formMaster={form}
         onUpdateAll={onUpdateAll}
         currentList={currentList}
+        onOpenEditProduct={onOpenEditProduct}
         onDeleteP={onDeleteP}
       />
     </React.Fragment>

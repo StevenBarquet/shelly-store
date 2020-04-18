@@ -23,4 +23,25 @@ export const priceFormat = number => {
   return finalNum;
 };
 
-export default null;
+export const copyToEnd = (str, index) => {
+  let copy = '';
+  for (let i = index; i < str.length; i++) {
+    copy += str[i];
+  }
+  return copy;
+};
+
+export const findIndexArrayObj = (array, obj) => {
+  const value = Object.values(obj)[0];
+  const isValueEqual = element => element === value; // Criterio de búsqueda para un mapeo
+  let i;
+  let found = false;
+  for (i = 0; i < array.length; i++) {
+    const values = Object.values(array[i]);
+    if (values.findIndex(isValueEqual) !== -1) {
+      found = true;
+      break;
+    }
+  }
+  return found ? i : -1;
+};

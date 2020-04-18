@@ -16,40 +16,26 @@ const Footer = withRouter(props => {
     <div className="footer-cont">
       <div className="footer-title">Contacto</div>
       <Row className="row-contacts">
-        <Col className="contact" sm={6}>
+        <Col className="contact" sm={12}>
           <Icon type="phone" />
-          <span>5533700670</span>
+          <span>55 6982 5605</span>
         </Col>
-        <Col className="contact" sm={6}>
+        <Col className="contact" sm={12}>
           <a
             href="https://www.facebook.com/"
             rel="noopener noreferrer"
             target="_blank"
           >
             <Icon type="facebook" />
-            <span>VMO movil</span>
+            <span>Shelly Store</span>
           </a>
-        </Col>
-        <Col className="contact" sm={6}>
-          <a
-            href="https://www.instagram.com/?hl=en"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Icon type="instagram" />
-            <span>VMO movil</span>
-          </a>
-        </Col>
-        <Col className="contact" sm={6}>
-          <Icon type="mail" />
-          <span>VMOmovil1112@gmail.com</span>
         </Col>
       </Row>
       <div className="footer-logo">
-        VMO <span>movil</span>
+        Shelly <span>Store</span>
       </div>
       <div className="footer-rigths">
-        © 2020 VMO movil, Inc. All Rights Reserved.
+        © 2020 Shelly Store, Inc. All Rights Reserved.
       </div>
     </div>
   );
